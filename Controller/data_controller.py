@@ -36,8 +36,8 @@ def append_with_file():
         reader = csv.reader(f, delimiter=',')
         for row in reader:
             if 'województwo' in row:
-                print_list(Voivodeships(row[4], row[5]))
+                print_list(Voivodeships(voivodeships=row[4], types=row[5]))
             if 'powiat' in row:
-                print_list(County(row[4], row[5]))
+                print_list(County(county=row[4], types=row[5]))
             if 'miasto na prawach powiatu' == row[5]:
                 print_list(CityCounty(row[4], row[5]))

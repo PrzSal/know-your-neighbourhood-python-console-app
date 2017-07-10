@@ -1,9 +1,10 @@
 class Voivodeships:
     voivodeships_list = []
 
-    def __init__(self, voivodeships, types):
+    def __init__(self, county='s', voivodeships='s', types='s'):
         Voivodeships.voivodeships_list.append(self)
         self.voivodeships = voivodeships
+        self.county = county
         self.types = types
 
     def __str__(self):

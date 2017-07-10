@@ -1,10 +1,12 @@
-class County:
+from Models.voivodeships import Voivodeships
+
+
+class County(Voivodeships):
     countys = []
 
-    def __init__(self, county, types):
+    def __init__(self, county='s', voivodeships='s', types='s'):
         County.countys.append(self)
-        self.county = county
-        self.types = types
+        super().__init__(county, voivodeships, types)
 
     def __str__(self):
         string = 'name conty: {},  type: {}'.format(self.county, self.types)
