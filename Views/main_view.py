@@ -37,6 +37,21 @@ def print_list(list_):
         print('Empty')
 
 
+def print_3_city(list_):
+    '''
+    Function that print every element in list_
+    ---------------------------------
+    Return:
+        None
+    '''
+    if list_:
+        for step in range(len(list_)-3, len(list_)):
+            print("--------------------")
+            print(list_[step])
+            print("--------------------")
+    else:
+        print('Empty')
+
 def print_menu(menu_list):
     '''
     Function that take menu options from a file, and print it on the screen.
@@ -44,6 +59,7 @@ def print_menu(menu_list):
     Return:
         It prints menu options
     '''
+    print('What would you like to do:')
     for options in range(0, len(menu_list)):
         print("(".rjust(6), options + 1, ")", (menu_list[options]))
     print("( 0 )".rjust(10) + " Exit")

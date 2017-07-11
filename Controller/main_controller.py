@@ -21,17 +21,20 @@ def handle_choice():
     '''
     choice = ''
     while choice != '0':
-        mentor_menu = ['Show students', 'Add assignment', 'Grade assignment',
-                       'Check attendence', 'Edit_student']
-        print_menu(mentor_menu)
+        main_menu = ['List statistics', 'Display 3 cities with longest names',
+                     "Display county's name with the largest number of communities",
+                     'Display locations, that belong to more than one category',
+                     'Advanced search']
+
+        print_menu(main_menu)
         choice = get_choice()
 
         if choice == '1':
-            print_list(append_with_file())
+            list_statistic()
 
         elif choice == '2':
-            add_new_assignment()
-            print_list(Assignment.assignments_list)
+            
+            three_large_city(County.countys)
 
         elif choice == '3':
             grade_assignment()
