@@ -33,24 +33,13 @@ def handle_choice():
             list_statistic()
 
         elif choice == '2':
-            
             three_large_city(County.countys)
 
         elif choice == '3':
-            grade_assignment()
+            county_with_the_largest_communities(NumberOfCommunity.number_community_list)
 
         elif choice == '4':
-            check_attendance(Student.students_list)
+            same_locations_in_more_one_category()
 
         elif choice == '5':
-            while choice != '0':
-
-                print_menu(['remove_student', 'add_student'])
-                choice = get_choice()
-
-                if choice == '1':
-                    remove_student()
-
-                elif choice == '2':
-                    add_student()
-                    print(Student.students_list)
+            pass

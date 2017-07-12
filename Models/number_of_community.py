@@ -6,8 +6,8 @@ class NumberOfCommunity:
         self.county = county
         self.__class__.number_community += 1
 
-    def add_county(self):
-        __class__.number_community_list.append(self)
+    def add_county_and_number(county, number):
+        __class__.number_community_list.append((county, str(number)))
 
-    def add_number(self):
-        __class__.number_community_list.append(self)
+    def __gt__(self, other):
+        return self.__class__.number_community

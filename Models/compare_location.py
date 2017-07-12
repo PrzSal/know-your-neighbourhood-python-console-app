@@ -25,11 +25,9 @@ class CompareLocation:
                 type_location = self.location_list[i][1]
 
                 for location in self.location_list:
-                    # print(same_location, type_location)
-                    # print(location[0], location[1])
                     if location[0] == same_location and location[1] != type_location:
-                        if location not in __class__.same_location_list:
-                            __class__.add_same_location(location)
+                        if location[0] not in __class__.same_location_list:
+                            __class__.add_same_location(location[0])
 
         except IndexError:
             pass
