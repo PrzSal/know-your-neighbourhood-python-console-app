@@ -14,10 +14,3 @@ class County(Voivodeships):
     def __str__(self):
         string = '{},  type: {}'.format(self.county, self.types)
         return string
-
-    def __gt__(self, other):
-        """Less-than comparison."""
-        return self.get_perimeter() > other.get_perimeter()
-
-    def add_shape(self, county):
-        self.countys.append(county)

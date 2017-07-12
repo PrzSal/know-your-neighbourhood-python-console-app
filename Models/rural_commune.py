@@ -1,7 +1,7 @@
-from Models.city_municipality import CityMunicipality
+from Models.county import County
 
 
-class RuralCommune(CityMunicipality):
+class RuralCommune(County):
     rural_commune_list = []
     rural_commune_type = ''
     quantity_rc = 0

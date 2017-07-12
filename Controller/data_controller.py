@@ -4,7 +4,9 @@ from Models.voivodeships import Voivodeships
 from Models.city_county import CityCounty
 from Models.city_municipality import CityMunicipality
 from Models.rural_commune import RuralCommune
-from Models. number_of_community import NumberOfCommunity
+from Models.number_of_community import NumberOfCommunity
+from Models.rural_town import RuralTown
+from Models.rural_area import RuralArea
 from Views.main_view import *
 
 
@@ -42,9 +44,17 @@ def list_statistic():
             elif 'gmina wiejska' in row:
                 print_list(RuralCommune(rural_commune=row[4], types=row[5]))
                 NumberOfCommunity()
+            elif 'gmina miejsko-wiejska' in row:
+                print_list(RuralTown(rural_town=row[4], types=row[5]))
+                NumberOfCommunity()
+            elif 'obszar wiejski' in row:
+                print_list(RuralArea(rural_area=row[4], types=row[5]))
+                NumberOfCommunity()
             elif 'miasto na prawach powiatu' == row[5]:
                 print_list(CityCounty(row[4], row[5]))
                 NumberOfCommunity()
+            if CompareLocation == CompareLocation:
+                add_same_location(self)
         print_list(NumberOfCommunity.number_community_list)
 
 

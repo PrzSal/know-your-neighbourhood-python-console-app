@@ -1,10 +1,9 @@
 class Voivodeships:
     voivodeships_list = []
-    county_list = []
     quantity = 0
 
     def __init__(self, voivodeships, types, county='po',
-                 city_municipality='cm', rural_commune='gw',):
+                 city_municipality='gm', rural_commune='gw',):
         Voivodeships.voivodeships_list.append(self)
         self.voivodeships = voivodeships
         self.county = county
