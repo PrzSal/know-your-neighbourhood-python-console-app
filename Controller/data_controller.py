@@ -7,6 +7,7 @@ from Models.rural_commune import RuralCommune
 from Models.number_of_community import NumberOfCommunity
 from Models.rural_town import RuralTown
 from Models.rural_area import RuralArea
+from Models.compare_location import CompareLocation
 from Views.main_view import *
 
 
@@ -29,34 +30,41 @@ def list_statistic():
     #     csv_row += [line.split(',')]
     with open('malopolska.csv') as f:
         reader = csv.reader(f, delimiter=',')
+        compare_location = CompareLocation()
         for row in reader:
             if 'województwo' in row:
                 print_list(Voivodeships(voivodeships=row[4], types=row[5]))
             elif 'powiat' in row or 'miasto na prawach powiatu' in row:
+                compare_location.remove_list_location()
                 if row[4] not in NumberOfCommunity.number_community_list:
                     NumberOfCommunity.add_number(NumberOfCommunity.number_community)
+                compare_location.add_location(row[4], row[5])
                 NumberOfCommunity.add_county(row[4])
                 print_list(County(county=row[4], types=row[5]))
                 NumberOfCommunity.number_community = 0
             elif 'gmina miejska' in row:
                 print_list(CityMunicipality(city_municipality=row[4], types=row[5]))
                 NumberOfCommunity()
+                compare_location.add_location(row[4], row[5])
             elif 'gmina wiejska' in row:
                 print_list(RuralCommune(rural_commune=row[4], types=row[5]))
                 NumberOfCommunity()
+                compare_location.add_location(row[4], row[5])
             elif 'gmina miejsko-wiejska' in row:
                 print_list(RuralTown(rural_town=row[4], types=row[5]))
                 NumberOfCommunity()
+                compare_location.add_location(row[4], row[5])
             elif 'obszar wiejski' in row:
                 print_list(RuralArea(rural_area=row[4], types=row[5]))
                 NumberOfCommunity()
+                compare_location.add_location(row[4], row[5])
             elif 'miasto na prawach powiatu' == row[5]:
                 print_list(CityCounty(row[4], row[5]))
                 NumberOfCommunity()
-            if CompareLocation == CompareLocation:
-                add_same_location(self)
+                compare_location.add_location(row[4], row[5])
+            compare_location.compare_location()
         print_list(NumberOfCommunity.number_community_list)
-
+        print_compare_list(CompareLocation.same_location_list)
 
 def three_large_city(list_):
     # with open('malopolska.csv') as f:

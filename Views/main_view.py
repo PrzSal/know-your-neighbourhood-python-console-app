@@ -52,6 +52,15 @@ def print_3_city(list_):
     else:
         print('Empty')
 
+
+def print_compare_list(list_):
+    if list_:
+        for location in list_:
+            print("--------------------")
+            print(location)
+            print("--------------------")
+    else:
+        print('Empty')
 def print_menu(menu_list):
     '''
     Function that take menu options from a file, and print it on the screen.

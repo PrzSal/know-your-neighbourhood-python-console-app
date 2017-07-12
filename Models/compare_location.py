@@ -2,21 +2,34 @@ class CompareLocation:
 
     same_location_list = []
 
-    def __init_(self, location, types):
+    def __init__(self):
         self.location_list = []
-        self.location = location
-        self.types = types
-        self.location_list.append(self)
+
+    def add_location(self, location, types):
+        self.location_list.append((location, types))
 
     def __eq__(self, other):
         """Less-than comparison."""
         return self.get_perimeter() == other.get_perimeter()
 
     def add_same_location(self):
-        County.same_location_list.append((self))
+        __class__.same_location_list.append(self)
 
-    def compare_Location(self):
-        same_location = self.location_list[0]
-        for location in self.location_list:
-            if location == same_location:
-                add_same_location(self)
+    def remove_list_location(self):
+        self.location_list = []
+
+    def compare_location(self):
+        try:
+            for i in range(len(self.location_list)):
+                same_location = self.location_list[i][0]
+                type_location = self.location_list[i][1]
+
+                for location in self.location_list:
+                    # print(same_location, type_location)
+                    # print(location[0], location[1])
+                    if location[0] == same_location and location[1] != type_location:
+                        if location not in __class__.same_location_list:
+                            __class__.add_same_location(location)
+
+        except IndexError:
+            pass
