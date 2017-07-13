@@ -55,12 +55,20 @@ def print_3_city(list_):
 
 def print_compare_list(list_):
     if list_:
-        for location in list_:
-            print("--------------------")
-            print(location)
-            print("--------------------")
+        types_list = []
+        try:
+            for i in range(len(list_)):
+                if list_[i].types not in types_list:
+                    print("|---------------------------------|")
+                    print(list_[i])
+                    types_list.append(list_[i].types)
+            print("\---------------------------------/")
+        except TypeError:
+            print('eerror', [i])
     else:
         print('Empty')
+
+
 def print_menu(menu_list):
     '''
     Function that take menu options from a file, and print it on the screen.

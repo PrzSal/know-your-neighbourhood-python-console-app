@@ -8,9 +8,9 @@ class CompareLocation:
     def add_location(self, location, types):
         self.location_list.append((location, types))
 
-    def __eq__(self, other):
+    def __eq__(self, location):
         """Less-than comparison."""
-        return self.get_perimeter() == other.get_perimeter()
+        return self.get_perimeter() == location.get_perimeter()
 
     def add_same_location(self):
         __class__.same_location_list.append(self)

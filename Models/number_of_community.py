@@ -6,6 +6,7 @@ class NumberOfCommunity:
         self.county = county
         self.__class__.number_community += 1
 
+    @staticmethod
     def add_county_and_number(county, number):
         __class__.number_community_list.append((county, str(number)))
 

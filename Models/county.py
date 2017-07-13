@@ -1,5 +1,4 @@
 from Models.voivodeships import Voivodeships
-from Models.number_of_community import NumberOfCommunity
 
 
 class County(Voivodeships):
@@ -12,5 +11,8 @@ class County(Voivodeships):
         County.countys.append([county])
 
     def __str__(self):
-        string = '{},  type: {}'.format(self.county, self.types)
+
+        # if __class__.str_quantity < 3:
+        string = '{},  type: {}'.format(__class__.quantity_c, self.types)
+
         return string

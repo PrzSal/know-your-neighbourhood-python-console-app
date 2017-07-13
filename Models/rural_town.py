@@ -1,7 +1,7 @@
-from Models.county import County
+from Models.voivodeships import Voivodeships
 
 
-class RuralTown(County):
+class RuralTown(Voivodeships):
     rural_town_list = []
     rural_town_type = ''
     quantity_rt = 0
@@ -13,5 +13,5 @@ class RuralTown(County):
         super().__init__(rural_town, types)
 
     def __str__(self):
-        string = '{},  type: {}'.format(RuralTown.quantity_rt, self.types)
+        string = '|  {} | {}     |'.format(RuralTown.quantity_rt, self.types)
         return string

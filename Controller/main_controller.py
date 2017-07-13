@@ -33,7 +33,7 @@ def handle_choice():
             list_statistic()
 
         elif choice == '2':
-            three_large_city(County.countys)
+            three_large_city(City.city_list)
 
         elif choice == '3':
             county_with_the_largest_communities(NumberOfCommunity.number_community_list)
