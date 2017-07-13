@@ -9,6 +9,7 @@ def start_main_controller():
     Return:
         None
     '''
+    read_file()
     handle_choice()
 
 
@@ -24,7 +25,7 @@ def handle_choice():
         main_menu = ['List statistics', 'Display 3 cities with longest names',
                      "Display county's name with the largest number of communities",
                      'Display locations, that belong to more than one category',
-                     'Advanced search']
+                     'Advanced search', 'Exit program']
 
         print_menu(main_menu)
         choice = get_choice()
