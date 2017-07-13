@@ -3,7 +3,7 @@ class CompareLocation:
     same_location_list = []
 
     def __init__(self):
-        self.location_list = []
+        self.temporary_location_list = []
 
     def add_location(self, location, types):
         """
@@ -13,7 +13,7 @@ class CompareLocation:
         Returns:
             list of tupple
         """
-        self.location_list.append((location, types))
+        self.temporary_location_list.append((location, types))
 
     def __eq__(self, location):
         """Less-than comparison."""
@@ -43,11 +43,11 @@ class CompareLocation:
             list or None
         """
         try:
-            for i in range(len(self.location_list)):
-                same_location = self.location_list[i][0]
-                type_location = self.location_list[i][1]
+            for i in range(len(self.temporary_location_list)):
+                same_location = self.temporary_location_list[i][0]
+                type_location = self.temporary_location_list[i][1]
 
-                for location in self.location_list:
+                for location in self.temporary_location_list:
                     if location[0] == same_location and location[1] != type_location:
                         if location[0] not in __class__.same_location_list:
                             __class__.add_same_location(location[0])
