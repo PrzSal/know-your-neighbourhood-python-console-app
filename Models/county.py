@@ -11,8 +11,5 @@ class County(Voivodeships):
         County.countys.append([county])
 
     def __str__(self):
-
-        # if __class__.str_quantity < 3:
-        string = '{},  type: {}'.format(__class__.quantity_c, self.types)
-
+        string = '|  {} | {}                    |'.format(__class__.quantity_c, self.types)
         return string
