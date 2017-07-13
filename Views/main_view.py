@@ -1,6 +1,3 @@
-import csv
-
-
 def get_choice():
     '''
     Function that ask user about his choise(which option did he take in menu)
@@ -11,52 +8,21 @@ def get_choice():
     return input("Your choice : ")
 
 
-def get_input():
+def print_statistic_list(list_):
     '''
-    Function that ask user about his choise(which option did he take in menu)
-    ---------------------------------
-    Return:
-        string with your input
-    '''
-    return input("Your choice : ")
-
-
-def print_list(list_):
-    '''
-    Function that print every element in list_
+    Atribute:
+        list of object
+    Function that create table to statistics option
     ---------------------------------
     Return:
         None
     '''
-    if list_:
-    #    for element in list_:
-        print("--------------------")
-        print(list_)
-        print("--------------------")
-    else:
-        print('Empty')
 
-
-def print_3_city(list_):
-    '''
-    Function that print every element in list_
-    ---------------------------------
-    Return:
-        None
-    '''
-    if list_:
-        for step in range(len(list_)-3, len(list_)):
-            print("--------------------")
-            print(list_[step])
-            print("--------------------")
-    else:
-        print('Empty')
-
-
-def print_compare_list(list_):
     if list_:
         types_list = []
         try:
+            print("/---------------------------------\\")
+            print("|       {}               |".format(list_[0].voivodeships))
             for i in range(len(list_)):
                 if list_[i].types not in types_list:
                     print("|---------------------------------|")
@@ -64,9 +30,9 @@ def print_compare_list(list_):
                     types_list.append(list_[i].types)
             print("\---------------------------------/")
         except TypeError:
-            print('eerror', [i])
+            print('error', [i])
     else:
-        print('Empty')
+        print('Empty List')
 
 
 def print_menu(menu_list):
