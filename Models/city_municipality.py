@@ -11,5 +11,5 @@ class CityMunicipality(Voivodeships):
         CityMunicipality.city_municipality_list.append(self)
 
     def __str__(self):
-        string = '{},  type: {}'.format(__class__.quantity_cm, self.types)
+        string = '|  {} | {}             |'.format(__class__.quantity_cm, self.types)
         return string
