@@ -25,7 +25,7 @@ def handle_choice():
         main_menu = ['List statistics', 'Display 3 cities with longest names',
                      "Display county's name with the largest number of communities",
                      'Display locations, that belong to more than one category',
-                     'Advanced search', 'Exit program']
+                     'Advanced search']
 
         print_menu(main_menu)
         choice = get_choice()
@@ -43,4 +43,4 @@ def handle_choice():
             same_locations_in_more_one_category()
 
         elif choice == '5':
-            pass
+            search_location(get_search())
