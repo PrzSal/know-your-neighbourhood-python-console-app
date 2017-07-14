@@ -91,50 +91,6 @@ def list_statistic():
     print_statistic_list(Voivodeships.voivodeships_list)
 
 
-def three_large_city(list_):
-    '''
-    Function sort list of object and
-    send list three city to print table
-    module
-    ---------------------------------
-    Return:
-        None
-    '''
-    sorted = False
-    while not sorted:
-        sorted = True
-
-        for step in range(len(list_)-1):
-            if len(list_[step][0]) > len(list_[step+1][0]):
-                temporary = list_[step+1]
-                list_[step+1] = list_[step]
-                list_[step] = temporary
-                sorted = False
-
-    title_list = ['location']
-    location = []
-
-    for i in range(len(list_)-3, len(list_)):
-        location += [list_[i]]
-    print_table(location, title_list)
-
-
-def county_with_the_largest_communities(list_):
-    sorted = False
-    while not sorted:
-        sorted = True
-
-        for step in range(len(list_)-1):
-            if int(list_[step][1]) > int(list_[step+1][1]):
-                temporary = list_[step+1]
-                list_[step+1] = list_[step]
-                list_[step] = temporary
-                sorted = False
-
-    title_list = ['location', 'type']
-    print_table(list_[-1:], title_list)
-
-
 def same_locations_in_more_one_category():
     '''
     Function that read object with same
@@ -149,14 +105,3 @@ def same_locations_in_more_one_category():
     for row in CompareLocation.same_location_list:
         location += [[row]]
     print_table(location, title_list)
-
-
-def search_location(input_user):
-    title_list = 'Searching for: ' + input_user
-    find_locations = []
-
-    for row in CompareLocation.all_locations:
-        if input_user in row.location:
-            find_locations += [row]
-
-    print_search_table(title_list, find_locations)

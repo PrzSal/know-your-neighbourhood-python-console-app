@@ -1,5 +1,7 @@
 from Controller.data_controller import *
-from Views.main_view import *
+from Controller.search_controller import search_location
+from Controller.three_city_controller import three_large_city_sort
+from Controller.largest_communities_controller import county_with_the_largest_communities
 
 
 def start_main_controller():
@@ -34,7 +36,7 @@ def handle_choice():
             list_statistic()
 
         elif choice == '2':
-            three_large_city(City.city_list)
+            three_large_city_sort(City.city_list)
 
         elif choice == '3':
             county_with_the_largest_communities(NumberOfCommunity.number_community_list)
