@@ -38,44 +38,44 @@ def read_file():
                 if row[4] not in NumberOfCommunity.number_community_list:
                     county_temporary = row[4]
 
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
                 County(county=row[4], types=row[5])
                 NumberOfCommunity.number_community = 0
 
             elif 'gmina miejska' in row:
                 CityMunicipality(city_municipality=row[4], types=row[5])
                 NumberOfCommunity()
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             elif 'gmina wiejska' in row:
                 RuralCommune(rural_commune=row[4], types=row[5])
                 NumberOfCommunity()
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             elif 'gmina miejsko-wiejska' in row:
                 RuralTown(rural_town=row[4], types=row[5])
                 NumberOfCommunity()
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             elif 'obszar wiejski' in row:
                 RuralArea(rural_area=row[4], types=row[5])
                 NumberOfCommunity()
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             elif 'miasto' in row:
                 City(city=row[4], types=row[5])
                 NumberOfCommunity()
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             elif 'miasto na prawach powiatu' in row:
                 CityCounty(city_county=row[4], types=row[5])
                 NumberOfCommunity()
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             elif 'delegatura' in row:
                 Delegacy(delegacy=row[4], types=row[5])
                 NumberOfCommunity()
-                compare_location.add_location(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             compare_location.compare_location()
 
@@ -149,3 +149,14 @@ def same_locations_in_more_one_category():
     for row in CompareLocation.same_location_list:
         location += [[row]]
     print_table(location, title_list)
+
+
+def search_location(input_user):
+    title_list = 'Searching for: ' + input_user
+    find_locations = []
+
+    for row in CompareLocation.all_locations:
+        if input_user in row.location:
+            find_locations += [row]
+
+    print_search_table(title_list, find_locations)
