@@ -1,0 +1,21 @@
+from Controller.data_controller import *
+
+
+def getkey(custom):
+    return custom.location
+
+
+def search_location(input_user):
+    if len(input_user) > 0:
+        title_str = CompareLocation()
+        find_locations = []
+
+        for row in CompareLocation.all_locations:
+            if input_user in row.location:
+                find_locations += [row]
+
+        find_locations = sorted(find_locations, key=getkey)
+        print_search_table(title_str, find_locations)
+
+    else:
+        get_message('Wrong lenght word')
