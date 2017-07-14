@@ -3,7 +3,7 @@ class CompareLocation:
     same_location_list = []
     all_locations = []
 
-    def __init__(self, location='lo', types='typ'):
+    def __init__(self, location='location', types='types'):
         self.location = location
         self.types = types
 
