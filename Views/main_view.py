@@ -8,6 +8,16 @@ def get_choice():
     return input("Your choice : ")
 
 
+def get_search():
+    '''
+    Function that ask user about his search
+    ---------------------------------
+    Return:
+        string with your input
+    '''
+    return input("Searching for: ")
+
+
 def print_statistic_list(list_):
     '''
     Atribute:
