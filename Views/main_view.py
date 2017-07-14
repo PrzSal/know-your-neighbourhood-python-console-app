@@ -1,3 +1,16 @@
+def print_menu(menu_list):
+    '''
+    Function that take menu options from a file, and print it on the screen.
+    ---------------------------------
+    Return:
+        It prints menu options
+    '''
+    print('What would you like to do:')
+    for options in range(0, len(menu_list)):
+        print("(".rjust(6), options + 1, ")", (menu_list[options]))
+    print("( 0 )".rjust(10) + " Exit")
+
+
 def get_choice():
     '''
     Function that ask user about his choise(which option did he take in menu)
@@ -17,6 +30,9 @@ def get_search():
     '''
     return input("Searching for: ")
 
+
+def get_message(contents):
+    print(contents)
 
 def print_statistic_list(list_):
     '''
@@ -45,14 +61,14 @@ def print_statistic_list(list_):
         print('Empty List')
 
 
-def print_menu(menu_list):
-    '''
-    Function that take menu options from a file, and print it on the screen.
-    ---------------------------------
-    Return:
-        It prints menu options
-    '''
-    print('What would you like to do:')
-    for options in range(0, len(menu_list)):
-        print("(".rjust(6), options + 1, ")", (menu_list[options]))
-    print("( 0 )".rjust(10) + " Exit")
+def print_search_table(tittle_str, list_search):
+    if list_search:
+        print("/-----------------------------------------------------\\")
+        print(tittle_str)
+        for location in list_search:
+            print("|-----------------------------------------------------|")
+            print(location)
+        print("\-----------------------------------------------------/")
+
+    else:
+        print('No result to views')
