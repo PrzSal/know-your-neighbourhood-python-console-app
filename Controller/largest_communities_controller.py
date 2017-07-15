@@ -2,6 +2,14 @@ from Controller.data_controller import *
 
 
 def county_with_the_largest_communities(list_):
+    '''
+    Args:
+    - list_ (list in list)
+    Funcions choose largest community count
+    ---------------------------------
+    Return:
+        None
+    '''
     sorted = False
     while not sorted:
         sorted = True
