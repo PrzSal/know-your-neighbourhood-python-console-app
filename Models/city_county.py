@@ -1,17 +1,13 @@
-from Models.voivodeships import Voivodeships
+from Models.location import Location
 
 
-class CityCounty(Voivodeships):
-    city_county_list = []
-    number_of_elements = 0
-    city_county = ''
+class CityCounty(Location):
+    quantity_cc = 0
 
     def __init__(self, city_county, types):
-        CityCounty.city_county_list.append(self)
-        self.__class__.number_of_elements += 1
-        self.__class__.city_county = types
+        self.__class__.quantity_cc += 1
         super().__init__(city_county, types)
 
     def __str__(self):
-        string = '|   {} | {} |'.format(__class__.number_of_elements, self.types)
+        string = '|   {} | {} |'.format(__class__.quantity_cc, self.types)
         return string

@@ -1,4 +1,5 @@
 import csv
+from Models.location import Location
 from Models.voivodeships import Voivodeships
 from Models.county import County
 from Models.city_county import CityCounty
@@ -29,7 +30,7 @@ def read_file():
 
         for row in reader:
             if 'województwo' in row:
-                Voivodeships(voivodeships=row[4], types=row[5])
+                Voivodeships(row[4], row[5])
 
             elif 'powiat' in row:
                 compare_location.remove_list_location()
@@ -39,16 +40,16 @@ def read_file():
                     county_temporary = row[4]
 
                 CompareLocation(row[4], row[5]).add_location()
-                County(county=row[4], types=row[5])
+                County(row[4], row[5])
                 NumberOfCommunity.number_community = 0
 
             elif 'gmina miejska' in row:
-                CityMunicipality(city_municipality=row[4], types=row[5])
+                CityMunicipality(row[4], row[5])
                 NumberOfCommunity()
                 CompareLocation(row[4], row[5]).add_location()
 
             elif 'gmina wiejska' in row:
-                RuralCommune(rural_commune=row[4], types=row[5])
+                RuralCommune(row[4], row[5])
                 NumberOfCommunity()
                 CompareLocation(row[4], row[5]).add_location()
 
@@ -58,22 +59,22 @@ def read_file():
                 CompareLocation(row[4], row[5]).add_location()
 
             elif 'obszar wiejski' in row:
-                RuralArea(rural_area=row[4], types=row[5])
+                RuralArea(row[4], row[5])
                 NumberOfCommunity()
                 CompareLocation(row[4], row[5]).add_location()
 
             elif 'miasto' in row:
-                City(city=row[4], types=row[5])
+                City(row[4], row[5])
                 NumberOfCommunity()
                 CompareLocation(row[4], row[5]).add_location()
 
             elif 'miasto na prawach powiatu' in row:
-                CityCounty(city_county=row[4], types=row[5])
+                CityCounty(row[4], row[5])
                 NumberOfCommunity()
                 CompareLocation(row[4], row[5]).add_location()
 
             elif 'delegatura' in row:
-                Delegacy(delegacy=row[4], types=row[5])
+                Delegacy(row[4], row[5])
                 NumberOfCommunity()
                 CompareLocation(row[4], row[5]).add_location()
 
@@ -88,7 +89,7 @@ def list_statistic():
     Return:
         None
     '''
-    print_statistic_list(Voivodeships.voivodeships_list)
+    print_statistic_list(Location.location_list)
 
 
 def same_locations_in_more_one_category():

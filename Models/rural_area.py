@@ -1,16 +1,12 @@
-from Models.voivodeships import Voivodeships
+from Models.location import Location
 
 
-class RuralArea(Voivodeships):
-    rural_area_list = []
-    rural_area_type = ''
+class RuralArea(Location):
     quantity_ra = 0
 
     def __init__(self, rural_area, types):
         self.__class__.quantity_ra += 1
-        self.__class__.rural_area_type = types
         super().__init__(rural_area, types)
-        RuralArea.rural_area_list.append(self)
 
     def __str__(self):
         string = '|  {} | {}            |'.format(RuralArea.quantity_ra, self.types)

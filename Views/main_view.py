@@ -48,7 +48,7 @@ def print_statistic_list(list_):
         types_list = []
         try:
             print("/---------------------------------\\")
-            print("|       {}               |".format(list_[0].voivodeships))
+            print("|       {}               |".format(list_[0].location))
             for i in range(len(list_)):
                 if list_[i].types not in types_list:
                     print("|---------------------------------|")
