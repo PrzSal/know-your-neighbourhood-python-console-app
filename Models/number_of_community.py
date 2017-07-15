@@ -8,6 +8,13 @@ class NumberOfCommunity:
 
     @staticmethod
     def add_county_and_number(county, number):
+        """
+        Atribute:
+            county, number
+        Add to list name county and how much communities in this county
+        Returns:
+            list of tupple
+        """
         __class__.number_community_list.append((county, str(number)))
 
     def __gt__(self, other):
