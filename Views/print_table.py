@@ -13,7 +13,6 @@ def create_list_max_width_col(table):
     list_max_elem_col = []
     for i in range(ammount_of_column):
         for j in range(len(table)):
-        #    print(table[j][i])
             if max_elem_col < len(table[j][i]):
                 max_elem_col = len(table[j][i])
         list_max_elem_col += [max_elem_col]
