@@ -23,6 +23,7 @@ def search_location(input_user):
                 find_locations += [row]
 
         find_locations = sorted(find_locations, key=getkey)
+        get_message('Found {} location(s):'.format(len(find_locations)))
         print_search_table(title_str, find_locations)
 
     else:
