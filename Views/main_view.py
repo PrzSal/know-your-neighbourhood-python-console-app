@@ -1,5 +1,7 @@
 def print_menu(menu_list):
     '''
+    Arg:
+    menu_list (list)
     Function that take menu options from a file, and print it on the screen.
     ---------------------------------
     Return:
@@ -32,12 +34,18 @@ def get_search():
 
 
 def get_message(contents):
+    '''
+    Function that print message user
+    ---------------------------------
+    Return:
+    print message
+    '''
     print(contents)
 
 def print_statistic_list(list_):
     '''
     Atribute:
-        list of object
+    list of object (list)
     Function that create table to statistics option
     ---------------------------------
     Return:
@@ -62,6 +70,15 @@ def print_statistic_list(list_):
 
 
 def print_search_table(tittle_str, list_search):
+    '''
+    Args:
+    - tittle_str (str)
+    - list_search (list)
+    Funcions print first and between row
+    ---------------------------------
+    Return:
+        None
+    '''
     if list_search:
         print("/-----------------------------------------------------\\")
         print(tittle_str)
