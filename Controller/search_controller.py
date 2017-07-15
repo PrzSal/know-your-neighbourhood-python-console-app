@@ -6,6 +6,14 @@ def getkey(custom):
 
 
 def search_location(input_user):
+    '''
+    Args:
+    - input_user (string)
+    Funcions search location for user question
+    ---------------------------------
+    Return:
+        None
+    '''
     if len(input_user) > 0:
         title_str = CompareLocation()
         find_locations = []
