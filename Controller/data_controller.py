@@ -31,6 +31,7 @@ def read_file():
         for row in reader:
             if 'województwo' in row:
                 Voivodeships(row[4], row[5])
+                CompareLocation(row[4], row[5]).add_location()
 
             elif 'powiat' in row:
                 compare_location.remove_list_location()
