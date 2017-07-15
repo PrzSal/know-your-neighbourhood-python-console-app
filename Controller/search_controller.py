@@ -2,7 +2,7 @@ from Controller.data_controller import *
 
 
 def getkey(custom):
-    return custom.location
+    return custom.location, custom.types
 
 
 def search_location(input_user):
