@@ -42,6 +42,7 @@ def get_message(contents):
     '''
     print(contents)
 
+
 def print_statistic_list(list_):
     '''
     Atribute:
