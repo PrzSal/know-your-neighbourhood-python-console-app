@@ -2,6 +2,7 @@ from Controller.data_controller import *
 from Controller.search_controller import search_location
 from Controller.three_city_controller import three_large_city_sort
 from Controller.largest_communities_controller import county_with_the_largest_communities
+from Controller.same_locations_controller import same_locations_in_more_one_category
 
 
 def start_main_controller():
