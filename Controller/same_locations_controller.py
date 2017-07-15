@@ -11,7 +11,9 @@ def same_locations_in_more_one_category():
         None
     '''
     title_list = ['location']
-    location = []
+    locations = []
     for row in CompareLocation.same_location_list:
-        location += [[row]]
-    print_table(location, title_list)
+        locations += [[row]]
+
+    locations = sorted(locations)
+    print_table(locations, title_list)
