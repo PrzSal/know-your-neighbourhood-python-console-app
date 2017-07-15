@@ -90,19 +90,3 @@ def list_statistic():
         None
     '''
     print_statistic_list(Location.location_list)
-
-
-def same_locations_in_more_one_category():
-    '''
-    Function that read object with same
-    location and send list to print table
-    module
-    ---------------------------------
-    Return:
-        None
-    '''
-    title_list = ['location']
-    location = []
-    for row in CompareLocation.same_location_list:
-        location += [[row]]
-    print_table(location, title_list)
