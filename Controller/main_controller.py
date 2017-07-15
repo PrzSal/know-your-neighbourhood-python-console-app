@@ -47,3 +47,6 @@ def handle_choice():
 
         elif choice == '5':
             search_location(get_search())
+
+        elif choice != '0':
+            get_message('Wrong choice, please give correct choice')
